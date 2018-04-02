@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>{{ page.title }}</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{site.github.url}}/css/style.css" charset="utf-8">
+  </head>
+
+  <body>
+    <div id="wrapper">
+    {{ content }}
+
+    <h1>{{site.data.src.head}}</h1>
+
+    {% for content in site.data.src.content %}
+      <h2>{{content.head}}</h2>
+      {% for subcontent in content.content %}
+        <section>
+        <input type="checkbox" id="{{subcontent.head}}" />
+        <label for="{{subcontent.head}}"><h3>{{subcontent.head}}</h3></label>
+        <div class="content">
+        {% for subsubcontent in subcontent.content %}
+          <p>{{subsubcontent.head}}</p>
+          <ul>
+          {% for item in subsubcontent.list %}
+            <li>{{item}}</li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </div>
+        </section>
+      {% endfor %}
+    {% endfor %}
+
+    </div>
+  </body>
+</html>

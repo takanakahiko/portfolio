@@ -1,0 +1,86 @@
+h1 {
+    background: linear-gradient(transparent 70%, #a7d6ff 70%);
+}
+
+h2{
+    margin-top: 10px;
+    background: linear-gradient(transparent 90%, #a7d6ff 70%);
+}
+
+h3{
+    display: inline;
+}
+
+#wrapper{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+img{
+    margin: 10px auto;
+    max-width: 90%;
+    max-height: 70vh;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
+    display: block;
+}
+
+.content {
+    margin: 2em 0;
+    padding: 0;
+}
+
+/*ボタン装飾*/
+label {
+    padding: 15px;
+    font-weight: bold;
+    background: #efefef;
+    border-radius: 5px;
+    cursor :pointer;
+    transition: .5s;
+    display: block;
+    width: 100%;
+}
+
+/*アイコンを表示*/
+label:before {
+    display: inline-block;
+    content: '\f078';
+    font-family: 'FontAwesome';
+    padding-right: 5px;
+    transition: 0.2s;
+}
+
+/*ボタンホバー時*/
+label:hover {
+    background: silver;
+}
+
+/*アイコンを切り替え*/
+input:checked ~ label:before {
+     content: '\f00d';
+     -ms-transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     transform: rotate(360deg);
+     color: #668ad8;
+}
+
+/*チェックは見えなくする*/
+input {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.content {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+input:checked ~ .content {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
