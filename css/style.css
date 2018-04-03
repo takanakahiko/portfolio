@@ -24,11 +24,6 @@ img{
     display: block;
 }
 
-.content {
-    margin: 2em 0;
-    padding: 0;
-}
-
 /*ボタン装飾*/
 label {
     padding: 15px;
@@ -44,8 +39,8 @@ label {
 /*アイコンを表示*/
 label:before {
     display: inline-block;
-    content: '\f078';
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 5 Free";
+    content: "\f078";
     padding-right: 5px;
     transition: 0.2s;
 }
@@ -57,7 +52,7 @@ label:hover {
 
 /*アイコンを切り替え*/
 input:checked ~ label:before {
-     content: '\f00d';
+     content: "\f00d";
      -ms-transform: rotate(360deg);
      -webkit-transform: rotate(360deg);
      transform: rotate(360deg);
